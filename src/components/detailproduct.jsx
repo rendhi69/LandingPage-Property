@@ -135,7 +135,7 @@ export default function DetailProduct() {
   return (
     <section className="bg-[#071b35] text-white py-20 px-6 md:px-16 min-h-screen">
       <div className="max-w-5xl mx-auto">
-        <div className="flex justify-center items-center flex-col mb-12" data-aos="fade-boncenter">
+        <div className="flex justify-center items-center flex-col mb-12" data-aos="fade-down">
           <h2 className="text-4xl font-extrabold text-white text-center relative inline-block after:content-[''] after:absolute after:w-24 after:h-1 after:bg-[#f5deb3] after:left-1/2 after:-translate-x-1/2 after:-bottom-2">
             {product.title}
           </h2>
@@ -147,17 +147,17 @@ export default function DetailProduct() {
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className="bg-[#0f2a4a] rounded-2xl overflow-hidden shadow-lg hover:shadow-[#f5deb3]/30 transition-transform duration-300 hover:scale-[1.03]"
+              className="bg-[#0f2a4a] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.03]"
             >
-              <div className="group">
+              <div className="group aspect-[16/9] w-full overflow-hidden rounded-t-2xl">
                 <img
                   src={type.images[0]}
                   alt={type.name}
-                  className="w-full h-56 object-cover rounded-t-xl transform transition duration-500 group-hover:scale-105 group-hover:brightness-95"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-95"
                 />
               </div>
               <div className="p-6">
-                <h4 className="text-xl font-semibold text-[#f5deb3]">{type.name}</h4>
+                <h4 className="text-xl font-bold text-[#f5deb3]">{type.name}</h4>
                 <p className="text-sm text-gray-300 mt-1">{type.desc}</p>
                 <p className="text-xs text-gray-400 mt-1">Lokasi: {type.lokasi}</p>
                 <p className="text-lg font-bold mt-4">{type.price}</p>
@@ -196,13 +196,14 @@ export default function DetailProduct() {
             </button>
 
             <div className="md:flex">
-              {/* Gambar utama & thumbnail */}
               <div className="md:w-1/2 p-4 bg-white">
-                <img
-                  src={mainImage}
-                  alt="Preview"
-                  className="w-full h-64 object-cover rounded-lg mb-4 shadow-md"
-                />
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-4 shadow-md">
+                  <img
+                    src={mainImage}
+                    alt="Preview"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="flex gap-2 mb-2 flex-wrap">
                   {selectedType.images.map((img, i) => (
                     <img
@@ -218,7 +219,6 @@ export default function DetailProduct() {
                 </div>
               </div>
 
-              {/* Deskripsi dan tombol */}
               <div className="md:w-1/2 p-6 bg-[#0f2a4a] text-white rounded-b-xl md:rounded-r-xl md:rounded-bl-none">
                 <h4 className="text-2xl font-bold mb-2 text-[#f5deb3]">{selectedType.name}</h4>
                 <p className="text-sm mb-3 italic text-gray-300">{selectedType.desc}</p>

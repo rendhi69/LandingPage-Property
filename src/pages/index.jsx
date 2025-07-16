@@ -5,10 +5,13 @@ import Review from "../components/review";
 
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <About />
-      <Review />
-    </>
+    <div className="bg-[#071b35]">
+      {/* Tambahkan jarak dari header (tinggi header = 80px → pt-20) */}
+      <div className="pt-13">
+        <Hero />
+        <About />
+        <Review />
+      </div>
+    </div>
   );
 }

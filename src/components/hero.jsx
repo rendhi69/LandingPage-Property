@@ -31,7 +31,7 @@ export default function Hero() {
       setTimeout(() => {
         setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
         setFade(true);
-      }, 300); // durasi transisi keluar
+      }, 300);
     }, 7000);
     return () => clearInterval(interval);
   }, []);
@@ -41,9 +41,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen pt-20 flex items-center justify-center overflow-hidden"
     >
-      {/* Gambar background */}
+      {/* Background Gambar */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <img
@@ -51,14 +51,14 @@ export default function Hero() {
             src={slide.image}
             alt={`slide-${index}`}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-[2000ms] ease-in-out 
-              ${index === currentIndex ? "opacity-100 scale-110" : "opacity-0 scale-100"}
+              ${index === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-100"}
             `}
           />
         ))}
         <div className="absolute inset-0 bg-[#071b35]/70" />
       </div>
 
-      {/* Konten teks */}
+      {/* Konten Teks */}
       <div className="relative z-10 w-full max-w-5xl px-4 text-center text-white transition-all duration-700">
         <h1
           className={`mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl leading-tight transition-all duration-700 
@@ -74,7 +74,7 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Ikon scroll */}
+      {/* Ikon Scroll */}
       <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
         <a href="#about" className="cursor-pointer">
           <svg

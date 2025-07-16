@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -68,10 +69,20 @@ const promoData = [
 
 export default function Promo() {
   const [selectedPromo, setSelectedPromo] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
+
+  // Handle smooth navigation
+  const handlePromoClick = () => {
+    setSelectedPromo(null);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // optional
+      navigate("/hubungikami");
+    }, 300);
+  };
 
   return (
     <section className="bg-[#071b35] text-white py-20 px-6 md:px-16 min-h-screen">
@@ -137,12 +148,12 @@ export default function Promo() {
                 <div className="text-sm text-gray-200 leading-relaxed">
                   {selectedPromo.detail}
                 </div>
-                <a
-                  href="#hubungi"
+                <button
+                  onClick={handlePromoClick}
                   className="inline-block mt-6 px-5 py-2.5 rounded-full bg-yellow-500 text-[#071b35] font-bold shadow hover:bg-white transition"
                 >
                   Dapatkan Promo Sekarang
-                </a>
+                </button>
               </div>
             </div>
           </div>

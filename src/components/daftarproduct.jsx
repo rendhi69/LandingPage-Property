@@ -55,7 +55,7 @@ export default function DaftarProduct() {
               key={product.id}
               data-aos="fade-up"
               data-aos-delay={product.id * 100}
-              className="rounded-2xl overflow-hidden bg-[#0f2a4a] text-white shadow-lg hover:shadow-[0_0_15px_#f5deb3] transform transition-transform duration-300 hover:scale-[1.03]"
+              className="rounded-2xl overflow-hidden bg-[#0f2a4a] text-white shadow-lg transform transition-transform duration-300 hover:scale-[1.03]"
             >
               <div className="group">
                 <img

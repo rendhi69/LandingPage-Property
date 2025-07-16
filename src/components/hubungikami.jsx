@@ -42,11 +42,10 @@ const KontakKami = () => {
             </div>
           </div>
         </div>
-
         {/* Google Map */}
         <div className="w-full md:w-1/2">
           <iframe
-            src="https://www.google.com/maps?q=ADI+MAS+ROGOJAMPI,+Banyuwangi,+Indonesia&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.068797720229!2d114.3052291747324!3d-8.295952583444784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd156d7d86bef9b%3A0x4cb09a70b9109740!2sPoliteknik%20Negeri%20Banyuwangi!5e0!3m2!1sid!2sid!4v1752634397886!5m2!1sid!2sid"
             width="100%"
             height="350"
             className="border-0 w-full rounded-md shadow-md"
@@ -56,6 +55,7 @@ const KontakKami = () => {
             title="Home Living Banyuwangi"
           ></iframe>
         </div>
+
       </div>
 
       {/* Formulir Kontak */}
