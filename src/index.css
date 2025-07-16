@@ -1,0 +1,68 @@
+/* 1. Konsisten box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* 2. Buat body dan html full width tanpa overflow */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  /* Tambahan penting */
+  background-color: #071b35;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+/* 3. Root React/Next isolation + full layout */
+#root, #__next {
+  width: 100%;
+  min-height: 100%;
+  isolation: isolate;
+}
+
+/* 4. Optional: Buat img atau block element juga benar-benar full */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Form control mewarisi font */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 6. Hindari overflow teks */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+/* 7. Khusus paragraf: wrapping yang indah */
+p {
+  text-wrap: pretty;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
